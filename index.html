@@ -8,87 +8,133 @@
         :root {
             --primary: #b91c1c; /* Vermelho Natalino */
             --primary-hover: #991b1b;
-            --secondary: #15803d; /* Verde Natalino */
-            --text: #1f2937;
-            --bg: #fdfbf7; /* Fundo off-white quentinho */
+            --secondary: #15803d; /* Verde Artesanato */
+            --bg-page: #f9f6f0; /* Fundo off-white sofisticado */
+            --text-main: #1f2937;
         }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: var(--text); background: var(--bg); margin: 0; padding: 20px; display: flex; justify-content: center; }
-        .container { max-width: 550px; width: 100%; background: #ffffff; padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border: 1px solid #f3e8d5; }
-        .badge { background: #fef2f2; color: var(--primary); padding: 6px 14px; border-radius: 99px; font-size: 13px; font-weight: bold; display: inline-block; margin-bottom: 15px; border: 1px solid #fee2e2; }
-        h1 { font-size: 26px; line-height: 1.2; margin: 0 0 15px 0; color: #111827; letter-spacing: -0.5px; }
-        .subtitle { font-size: 16px; color: #4b5563; margin-bottom: 20px; line-height: 1.4; }
-        .mockup-placeholder { width: 100%; background: #f3f4f6; border: 2px dashed #d1d5db; border-radius: 12px; padding: 40px 20px; text-align: center; color: #6b7280; font-size: 14px; box-sizing: border-box; margin-bottom: 20px; }
-        ul { padding-left: 20px; margin: 20px 0; }
-        li { margin-bottom: 12px; font-size: 15px; line-height: 1.4; }
-        li strong { color: var(--secondary); }
-        .price-box { background: #f0fdf4; border: 1px solid #bbf7d0; padding: 15px; border-radius: 12px; text-align: center; margin: 25px 0 15px 0; }
-        .price-box .old-price { font-size: 14px; text-decoration: line-through; color: #6b7280; }
-        .price-box .new-price { font-size: 32px; font-weight: bold; color: var(--secondary); margin-top: 5px; }
-        .cta-btn { display: block; background: var(--primary); color: white; text-align: center; padding: 16px; border-radius: 8px; font-size: 18px; font-weight: bold; text-decoration: none; transition: background 0.2s; box-shadow: 0 4px 12px rgba(185, 28, 28, 0.2); }
-        .cta-btn:hover { background: var(--primary-hover); }
         
-        /* FAQ Sanfona */
-        .faq-section { margin-top: 35px; border-top: 1px solid #e5e7eb; padding-top: 25px; }
-        .faq-section h3 { margin-bottom: 15px; font-size: 18px; color: #111827; }
-        details { background: #f9fafb; padding: 14px; border-radius: 8px; margin-bottom: 10px; cursor: pointer; border: 1px solid #f3f4f6; transition: background 0.2s; }
-        details:hover { background: #f3f4f6; }
-        details summary { font-weight: 600; outline: none; font-size: 15px; list-style: none; display: flex; justify-content: space-between; align-items: center; }
-        details summary::after { content: "➔"; font-size: 12px; color: #9ca3af; transition: transform 0.2s; }
-        details[open] summary::after { transform: rotate(90deg); }
-        details p { margin: 12px 0 0 0; font-size: 14px; color: #4b5563; line-height: 1.5; }
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: var(--text-main); background: var(--bg-page); margin: 0; padding: 0; display: flex; justify-content: center; }
+        
+        /* Estrutura Centralizada da Landing Page */
+        .page-container { max-width: 600px; width: 100%; background: #ffffff; box-shadow: 0 10px 40px rgba(0,0,0,0.06); min-height: 100vh; display: flex; flex-direction: column; }
+        
+        /* SEÇÃO 1: TOPO & PROMESSA */
+        .section-hero { padding: 45px 30px 25px 30px; text-align: center; background: linear-gradient(180deg, #fef2f2 0%, #ffffff 100%); }
+        .badge { background: #fee2e2; color: var(--primary); padding: 6px 16px; border-radius: 99px; font-size: 13px; font-weight: bold; display: inline-block; margin-bottom: 20px; border: 1px solid #fca5a5; letter-spacing: 0.5px; }
+        h1 { font-size: 30px; line-height: 1.25; margin: 0 0 15px 0; color: #111827; letter-spacing: -0.5px; font-weight: 800; }
+        .subtitle { font-size: 16px; color: #4b5563; line-height: 1.6; margin: 0; }
+        
+        /* SEÇÃO 2: VITRINE PRINCIPAL (PRIMEIRA CAPA) */
+        .section-main-cover { padding: 15px 30px; text-align: center; background: #ffffff; }
+        .img-fluid { width: 100%; max-width: 460px; border-radius: 16px; box-shadow: 0 12px 25px rgba(0,0,0,0.1); border: 1px solid #e5e7eb; }
+        
+        /* SEÇÃO 3: O QUE VOCÊ VAI RECEBER (SEGUNDA CAPA + DETALHES) */
+        .section-details { padding: 40px 30px; background: #fdfbf7; border-top: 1px solid #f3e8d5; border-bottom: 1px solid #f3e8d5; }
+        .section-details h2 { font-size: 22px; margin: 0 0 25px 0; text-align: center; color: var(--secondary); font-weight: 700; }
+        .benefit-item { background: #ffffff; padding: 16px; border-radius: 12px; margin-bottom: 15px; border: 1px solid #f5edd6; box-shadow: 0 2px 4px rgba(0,0,0,0.01); display: flex; align-items: flex-start; }
+        .benefit-icon { font-size: 22px; margin-right: 15px; margin-top: -2px; }
+        .benefit-text { font-size: 15px; line-height: 1.5; color: #374151; margin: 0; }
+        .benefit-text strong { color: #111827; }
+        
+        /* SEÇÃO 4: PREÇO & BOTÃO DE COMPRA */
+        .section-checkout { padding: 45px 30px; text-align: center; background: #ffffff; }
+        .price-card { background: #f0fdf4; border: 2px dashed #bbf7d0; padding: 25px 20px; border-radius: 16px; margin-bottom: 25px; position: relative; }
+        .old-price { font-size: 15px; text-decoration: line-through; color: #6b7280; }
+        .new-price { font-size: 40px; font-weight: bold; color: var(--secondary); margin: 8px 0; letter-spacing: -0.5px; }
+        .secure-tag { font-size: 13px; color: #374151; font-weight: 500; display: inline-flex; align-items: center; gap: 5px; }
+        .cta-button { display: block; background: var(--primary); color: white; text-align: center; padding: 18px; border-radius: 12px; font-size: 20px; font-weight: bold; text-decoration: none; box-shadow: 0 6px 25px rgba(185, 28, 28, 0.3); transition: transform 0.2s, background 0.2s; }
+        .cta-button:hover { background: var(--primary-hover); transform: scale(1.02); }
+        
+        /* SEÇÃO 5: FAQ SANFONA */
+        .section-faq { padding: 40px 30px; border-top: 1px solid #e5e7eb; background: #fafafa; }
+        .section-faq h3 { text-align: center; margin: 0 0 25px 0; font-size: 22px; color: #111827; font-weight: 700; }
+        details { background: #ffffff; padding: 16px; border-radius: 10px; margin-bottom: 12px; cursor: pointer; border: 1px solid #e5e7eb; box-shadow: 0 2px 4px rgba(0,0,0,0.01); transition: background 0.2s; }
+        details:hover { background: #f9fafb; }
+        details summary { font-weight: 600; font-size: 15px; display: flex; justify-content: space-between; align-items: center; color: #374151; }
+        details summary::after { content: "+"; font-size: 20px; color: #9ca3af; font-weight: 300; }
+        details[open] summary::after { content: "−"; }
+        details p { margin: 12px 0 0 0; font-size: 14px; color: #4b5563; line-height: 1.6; }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div style="text-align: center;"><span class="badge">🎄 ACESSO IMEDIATO & DOWNLOAD DIGITAL</span></div>
-    <h1 style="text-align: center;">Natal Encantado em Feltro</h1>
-    <p class="subtitle" style="text-align: center;">Fature alto ou decore sua casa com 10 projetos lindos, fáceis e com moldes em tamanho real do iniciante ao intermediário.</p>
-    
-    <!-- Espaço reservado para a Imagem da Capa do Canva -->
-    <div class="mockup-placeholder">
-        📸 [Aqui vai o link da imagem da sua capa do Canva]<br>
-        <span style="font-size:12px; color:#9ca3af;">(Capa: Natal Encantado em Feltro)</span>
-    </div>
+<div class="page-container">
 
-    <ul>
-        <li><strong>10 Moldes Prontos:</strong> Passo a passo detalhado para criar Papai Noel, Boneco de Neve, Renas e muito mais.</li>
-        <li><strong>Renda Extra no Natal:</strong> Peças de rápida execução com alto valor de revenda e excelente margem de lucro.</li>
-        <li><strong>Imprima em Casa:</strong> Arquivos em formato PDF prontos para imprimir em folha A4 comum.</li>
-    </ul>
+    <!-- SEÇÃO 1: TOPO & PROMESSA -->
+    <section class="section-hero">
+        <span class="badge">🎄 ACESSO DIGITAL IMEDIATO</span>
+        <h1>Natal Encantado em Feltro</h1>
+        <p class="subtitle">Descubra como produzir as peças natalinas mais desejadas do ano. São 10 projetos exclusivos com moldes prontos para imprimir e começar hoje mesmo.</p>
+    </section>
 
-    <div class="price-box">
-        <div class="old-price">De R$ 47,90 por apenas</div>
-        <div class="new-price">R$ 19,90</div>
-        <span style="font-size: 11px; color: #6b7280;">*Preço promocional de lançamento. Sem taxas escondidas.</span>
-    </div>
+    <!-- SEÇÃO 2: VITRINE PRINCIPAL (PRIMEIRA CAPA) -->
+    <section class="section-main-cover">
+        <!-- Puxa a sua imagem capa.jpeg -->
+        <img src="capa.jpeg" alt="Capa Natal Encantado em Feltro" class="img-fluid">
+    </section>
 
-    <a href="#" class="cta-btn">Quero os Moldes Agora ➔</a>
+    <!-- SEÇÃO 3: DETALHES DO PRODUTO & SEGUNDA CAPA -->
+    <section class="section-details">
+        <h2>O que você vai encontrar no material:</h2>
+        
+        <div class="benefit-item">
+            <span class="benefit-icon">📐</span>
+            <p class="benefit-text"><strong>10 Moldes em Tamanho Real:</strong> Arquivos totalmente configurados em tamanho A4. É só imprimir na sua impressora caseira e recortar.</p>
+        </div>
 
-    <!-- FAQ Sanfona para quebrar objeções -->
-    <div class="faq-section">
-        <h3>Dúvidas Frequentes (FAQ)</h3>
+        <div class="benefit-item">
+            <span class="benefit-icon">🧵</span>
+            <p class="benefit-text"><strong>Passo a Passo Prático:</strong> Guia didático desenhado para quem quer produzir de forma rápida, mesmo sem ter experiência em costura.</p>
+        </div>
+
+        <!-- SEGUNDA IMAGEM DE CAPA (capa.jpg) -->
+        <div style="text-align: center; margin: 25px 0 10px 0;">
+            <img src="capa.jpg" alt="Detalhes dos Moldes de Feltro" class="img-fluid" style="max-width: 380px;">
+        </div>
+
+        <div class="benefit-item">
+            <span class="benefit-icon">💰</span>
+            <p class="benefit-text"><strong>Alta Lucratividade:</strong> Peças de feltro têm um custo de produção baixíssimo e alto valor de venda no mercado de decoração de fim de ano.</p>
+        </div>
+    </section>
+
+    <!-- SEÇÃO 4: PREÇO & COMPRA -->
+    <section class="section-checkout">
+        <div class="price-card">
+            <span class="old-price">De R$ 47,90 por apenas</span>
+            <div class="new-price">R$ 19,90</div>
+            <span class="secure-tag">🔒 Pagamento Seguro • Link Enviado no E-mail</span>
+        </div>
+        <!-- COLOQUE SEU LINK DO CHECKOUT DA KIWIFY/HOTMART NO HREF ABAIXO -->
+        <a href="#" class="cta-button">Quero os Moldes Agora ➔</a>
+    </section>
+
+    <!-- SEÇÃO 5: FAQ SANFONA -->
+    <section class="section-faq">
+        <h3>Dúvidas Frequentes</h3>
         
         <details>
             <summary>Como vou receber o material?</summary>
-            <p>O envio é 100% automático. Assim que o pagamento for confirmado, você receberá o link para download direto no seu e-mail.</p>
+            <p>O envio é feito de forma 100% automática pelo sistema. Assim que o seu pagamento for aprovado, o link de acesso para baixar o arquivo em PDF chega direto no e-mail que você cadastrou na compra.</p>
         </details>
 
         <details>
-            <summary>Preciso de máquina de costura?</summary>
-            <p>Não! Todos os projetos podem ser feitos 100% à mão com pontos simples, ideal tanto para iniciantes quanto para veteranas do feltro.</p>
+            <summary>Preciso ter máquina de costura?</summary>
+            <p>Não precisa! Todos os projetos deste guia foram pensados e desenvolvidos para serem costurados totalmente à mão, utilizando os pontos mais tradicionais e simples do artesanato em feltro.</p>
         </details>
 
         <details>
-            <summary>Os moldes já vêm em tamanho real?</summary>
-            <p>Sim! Os moldes estão configurados para impressão em folha A4 comum, bastando imprimir, recortar e começar a produzir.</p>
+            <summary>Os moldes já vêm prontos para imprimir?</summary>
+            <p>Sim! Todos os moldes já estão no tamanho exato e correto para impressão. Você não precisa ajustar nada no computador: basta abrir o arquivo e mandar imprimir em folhas de papel comum (tamanho A4).</p>
         </details>
 
         <details>
-            <summary>Tem garantia?</summary>
-            <p>Com certeza! Você tem 7 dias de garantia incondicional. Se por qualquer motivo você não gostar do material, basta pedir o reembolso.</p>
+            <summary>O site é seguro? Tem alguma garantia?</summary>
+            <p>Com certeza. O processo de pagamento é gerenciado por plataformas líderes de mercado totalmente seguras. Além disso, você conta com uma um garantia incondicional de 7 dias: se não gostar, basta solicitar o reembolso.</p>
         </details>
-    </div>
+    </section>
+
 </div>
 
 </body>
